@@ -1,0 +1,7 @@
+name = "owo-private"
+main = "src/worker.js"
+compatibility_date = "2026-01-01"
+[vars]
+# Required: configure your private Discord guild snowflake before deployment.
+# Missing or placeholder values fail closed at runtime.
+ALLOWED_GUILD_ID = ""

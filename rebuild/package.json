@@ -1,0 +1,21 @@
+{
+  "name": "owo-private",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "wrangler dev --local --ip 127.0.0.1 --port 8787",
+    "deploy": "wrangler deploy",
+    "register:commands": "node --env-file=.env src/register.js",
+    "local:command": "node --env-file=.env scripts/local-command.mjs",
+    "test": "node --test --test-isolation=none --test-reporter=spec src/*.test.js test/*.test.js",
+    "test:db": "node test/run-postgres.mjs --latest && node test/run-bonuses-postgres.mjs",
+    "test:db:core": "node test/run-postgres.mjs",
+    "test:runtime": "node test/run-workerd-smoke.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
